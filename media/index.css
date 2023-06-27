@@ -1,0 +1,106 @@
+/* index.css - Main style-sheet for the webview view */
+/* Copyright 2023 Tom Smeets <tom@tsmeets.nl> */
+
+/* Vscode theme defaults */
+* {
+  /* Always use the default vscode font and coloring */
+  box-sizing: border-box;
+  font-family: var(--vscode-font-family);
+
+  /* Margin is the space outside the element */
+  /* Padding is the spacing inside the element */
+  /* See: https://www.w3schools.com/css/css_boxmodel.asp */
+  /* margin > border > padding > content
+  /* outline is drawn on top, above the border and does not change the size */
+  margin: 2px;
+}
+
+
+/* Outline elements for debugging the css */
+/* * { outline: 1px solid darkmagenta;} */
+
+/* Main body should fill the screen/portion that we get from vscode */
+html,body {
+  height: 100%;
+  width: 100%;
+
+  /* 100% size does not work correctly with margins, they are not included in the sizing and always overflow. Use padding for this in the body if needed. */
+  margin: 0px;
+}
+
+/* Center section headers in the options pane */
+h4 {
+  text-align: center;
+}
+
+/* Use the same styling in all interactive elements */
+input,button,select,.tab,pre {
+  color: var(--vscode-input-foreground);
+  background-color: var(--vscode-input-background);
+  border: 1px solid var(--vscode-panel-border);
+  border-radius: 2px;
+  padding: 4px;
+}
+
+/* for button like objects, show the pointer hand */
+button,select,.tab {
+  cursor: pointer;
+}
+
+/* horizontal separator should fit the theme */
+hr {
+  border-color: var(--vscode-panel-border);
+}
+
+input::placeholder {
+  color: var(--vscode-input-placeholderForeground);
+}
+
+button:hover,.tab.active,.tab:hover {
+  background-color: var(--vscode-inputOption-activeBackground);
+  color: var(--vscode-inputOption-activeForeground);
+  border-color: var(--vscode-textLink-activeForeground);
+}
+
+/* Console output, use editor like styling */
+pre {
+  font-family: var(--vscode-editor-font-family);
+  font-weight: var(--vscode-editor-font-weight);
+  font-size: var(--vscode-editor-font-size);
+  background-color: var(--vscode-editor-background);
+  color: var(--vscode-editor-foreground);
+}
+
+/* font for icons ('x', and '+') */
+.icon {
+  font: icon;
+  text-align: center;
+}
+
+/* Vertical flex layout */
+.vflex {
+  display: flex;
+  flex-flow: column;
+}
+
+/* Horizontal flex layout */
+.hflex {
+  display: flex;
+  flex-flow: row;
+}
+
+/* keep element size as small as possible, but don't shrink smaller than the content */
+.shrink {
+  flex: 0 0 auto;
+}
+
+/* make the element as big as possible, while sharing the space with the other elements */
+.grow {
+  flex: 1 1 auto;
+}
+
+/* Add a scroll-bar to the view*/
+.scroll {
+  overflow: scroll;
+  overflow-wrap: break-word;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- the css file styles the entire page each ${..} is replaced by `extension.ts` to the actual paths -->
+    <link href="${uri_css}" rel="stylesheet">
+
+    <!-- Load the program code. We use 'defer' to load the js after the document is loaded, so we can access the elements immediately. -->
+    <script src="${uri_js}" defer></script>
+</head>
+<body class="hflex">
+    <!-- Left side, contains console and filter -->
+    <div class='vflex grow' style='overflow: hidden'>
+        <!-- Tab bar -->
+        <div id='tabbar'>
+            <!-- Plus button, the tabs are added in index.js -->
+            <button id='tab_plus' class="icon">+</button>
+        </div>
+
+        <!-- Output Console -->
+        <pre id='output' class='grow scroll'></pre>
+
+        <!-- Bottom row for filter and input -->
+        <div id='bottom' class='hflex shrink'>
+                <input id='filter' placeholder="Filter" class='grow'></input>
+                <input id='input' placeholder="Input Command" class='grow'></input>
+                <button id='follow'>Scroll to bottom</button>
+        </div>
+    </div>
+
+        
+    <!-- Right side, contains options and buttons -->
+    <div id='right' class='shrink scroll vflex'>
+        <!-- RTT or GDB connection settings -->
+        <h4>Connection</h4>
+        Connection Type
+        <select name="type" id="type">
+            <optgroup label="SEGGER J-Link">
+                <option value="jl-rtt">RTT</option>
+                <option value="jl-swo">SWO</option>
+                <option value="jl-telnet">Telnet</option>
+            </optgroup>
+            <optgroup label="ST-Link">
+                <option value="st-gdb">RTT (over GDB)</option>
+                <option value="st-swo">SWO</option>
+            </optgroup>
+            <optgroup label="OpenOCD">
+                <option value="oc-gdb">RTT (over GDB)</option>
+                <option value="oc-swo">SWO</option>
+            </optgroup>
+        </select>
+        Host
+        <input id='host' value='127.0.0.1'></input>
+        Port
+        <input id='port' type='number' value='19021'></input>
+        <button id='connect'>Connect</button>
+        <hr>
+        <!-- Filter and Console settings -->
+        <h4>Console</h4>
+        Filter Type
+        <select name="filter_type" id="filter_type">
+            <option value="simple">Simple</option>
+            <option value="regex">Regex</option>
+        </select>
+        <hr>
+        <button id='save'>Save As</button>
+        <button id='clear'>Clear All</button>
+    </div>
+</body>
