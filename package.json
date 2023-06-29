@@ -1,9 +1,10 @@
 {
   "name": "uscope",
   "version": "1.0.0",
-  "publisher": "Tom Smeets",
-  "displayName": "μscope RTT and SWO viewer",
+  "publisher": "DEMCON",
+  "displayName": "μScope RTT and SWO viewer",
   "description": "View RTT and SWO debug consoles",
+  "icon": "media/icon.png",
   "engines": {
     "vscode": "^1.50.0"
   },
