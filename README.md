@@ -2,7 +2,7 @@
 
 ## Usage
 Start the SEGGER J-Link gdb server, if not running already.
-Put some code on the microcontorller that prints via SEGGER RTT.
+Put some code on the microcontroller that prints via SEGGER RTT.
 Press connect, using the default host and port.
 
 Disable or disconnect other external RTT viewers such as the RTT console in Cortex.
